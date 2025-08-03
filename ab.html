@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - AK Hollow Blocks</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <style>
+    <!--stop-->
+ 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      color: #fff;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .zigzag-section {
+      max-width: 1000px;
+      margin: 0 auto 2rem;
+      padding: 1rem;
+    }
+    .zigzag-section h2 {
+      color: #222;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .zigzag {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .zigzag:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+    .zigzag:nth-child(even) {
+      flex-direction: row;
+    }
+    .zigzag img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .zigzag img:hover {
+      transform: scale(1.05);
+    }
+    .zigzag-text {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem;
+      color: #333;
+      animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      .zigzag {
+        flex-direction: column-reverse !important;
+      }
+    }
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .card-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 100%;
+      min-height: 420px;
+      background-color: transparent;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #0963c3;
+      color: #fff;
+      border-radius: 12px;
+      overflow-y: auto;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    .card-side h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-side p {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .language-toggle {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .language-toggle button {
+      padding: 0.6rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .language-toggle button:hover {
+      background-color: #004080;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .card-side {
+        padding: 1rem;
+      }
+    }
+    .hero {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo">AK Hollow Blocks</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ab.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="toggleMode"></button></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero" data-aos="fade-up">
+  <h2>Premium Quality Solid Blocks</h2>
+  <p>Strong. Reliable. Affordable.</p>
+<button onclick="location.href='contact.html'">Enquire Now</button>
+</section><br>
+  <div class="card-container">
+    <div class="card" id="languageCard">
+      <!-- Tamil Side -->
+      <div class="card-side card-back">
+        <h2>About Us (தமிழ்)</h2>
+        <p><strong>ஏ.கே ஹாலோ பிளாக்ஸ் – உங்கள் கட்டுமான கனவுகளுக்கான நம்பகமான துணை!</strong></p>
+        <p>தரமான ஹாலோ பிளாக்கள், கேரளா மாடல் ஜன்னல்கள், சிமெண்ட் ரிங்கள் மற்றும் தளப் பலகைகள் உற்பத்தி செய்கிறோம்.</p>
+        <p>உங்கள் வீடு, கம்பெனி அல்லது திட்டத்திற்கான அனைத்து சிமெண்டு பொருட்களும் சிறந்த தரத்தில் குறைந்த விலைக்கு.</p>
+        <p>நவீன இயந்திரங்கள் மற்றும் அனுபவம் வாய்ந்த தொழிலாளர்கள் மூலம் நேரத்தில் விநியோகம்.</p>
+        <p>✅ உயர்தரம் | ✅ மொத்தம் & சில்லறை | ✅ நேரடி டெலிவரி</p>
+        <p><strong>வலிமையான கட்டிடம் – நம்பிக்கையான தேர்வு – ஏ.கே ஹாலோ பிளாக்ஸ்!</strong></p>
+      </div>
+
+      <!-- English Side -->
+      <div class="card-side card-front">
+        <h2>About Us (English)</h2>
+        <p><strong>AK Hollow Blocks – Your Reliable Partner in Construction Dreams!</strong></p>
+        <p>We manufacture premium hollow blocks, Kerala-style windows, cement rings, and slabs with the highest quality.</p>
+        <p>We supply all cement-based products at affordable prices for your home or commercial project.</p>
+        <p>Modern machinery + skilled workers ensure quality and on-time delivery.</p>
+        <p>✅ High Quality | ✅ Wholesale & Retail | ✅ Timely Delivery</p>
+        <p><strong>Build Strong. Build Smart. Choose AK Hollow Blocks!</strong></p>
+      </div>
+    </div>
+
+    <div class="language-toggle">
+      <button onclick="toggleCard()" id="toggleBtn">Show in Tamil</button>
+    </div>
+  </div>
+
+
+  <section class="zigzag-section">
+    <h2>Our Machinery & Products</h2>
+    <div class="zigzag">
+      <img src="mm (2).png" alt="Machine 1">
+      <div class="zigzag-text">
+        <h3>High-Pressure Block Machine</h3>
+        <p>Creates strong, uniform hollow blocks suitable for all building types.</p>
+      </div>
+    </div>
+    <div class="zigzag">
+      <img src="mm (3).png" alt="Machine 2">
+      <div class="zigzag-text">
+        <h3>Cement Ring Casting Machine</h3>
+        <p>Precision casting equipment ensures consistent quality rings for drainage and structure.</p>
+      </div>
+    </div>
+    <div class="zigzag">
+      <img src="mm (1).png" alt="Machine 1">
+      <div class="zigzag-text">
+        <h3>High-Pressure Block Machine</h3>
+        <p>Creates strong, uniform hollow blocks suitable for all building types.</p>
+      </div>
+    </div>
+    <div class="zigzag">
+      <img src="mm (4).png" alt="Machine 2">
+      <div class="zigzag-text">
+        <h3>Cement Ring Casting Machine</h3>
+        <p>Precision casting equipment ensures consistent quality rings for drainage and structure.</p>
+      </div>
+    </div>
+    <!-- Add more zigzag items as needed -->
+  </section>
+
+   <footer>
+        <div class="footer-content">
+            <h3>AK Hollow Blocks</h3>
+          <p>We manufacture premium hollow blocks, Kerala-style windows, cement rings, and slabs with the highest quality.
+       </p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AK Hollow Blocks. All rights reserved.</p>
+                    <div class="footer-menu">
+                      <ul class="f-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ab.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </div>
+        </div>
+    </footer>
+
+  <script>
+    
+    function showTamil() {
+      document.getElementById('tamilText').style.display = 'block';
+      document.getElementById('englishText').style.display = 'none';
+    }
+
+    function showEnglish() {
+      document.getElementById('tamilText').style.display = 'none';
+      document.getElementById('englishText').style.display = 'block';
+    }
+  </script>
+    <script>
+    let isTamil = true;
+
+    function toggleCard() {
+      const card = document.getElementById('languageCard');
+      const btn = document.getElementById('toggleBtn');
+
+      card.classList.toggle('flipped');
+      isTamil = !isTamil;
+      btn.textContent = isTamil ? "Show in Tamil" : "Show in English";
+    }
+  </script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    AOS.init();
+    function openEnquiryForm() {
+      document.getElementById("enquiryPopup").style.display = "block";
+    }
+  </script>
+</body>
+</html>
